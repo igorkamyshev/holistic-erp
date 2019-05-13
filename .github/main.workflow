@@ -65,5 +65,10 @@ action "Deploy on server" {
   uses = "maddox/actions/ssh@master"
   needs = ["Push front image", "Push back image"]
   args = "cd /root/web/holistic-erp && docker-compose pull && docker-compose down && docker-compose up -d && docker-compose run back yarn evolutions:run && docker image prune -f"
-  secrets = ["HOST", "USER", "PUBLIC_KEY", "PRIVATE_KEY"]
+  secrets = [
+    "HOST",
+    "USER",
+    "PRIVATE_KEY",
+    "PUBLIC_KEY",
+  ]
 }
