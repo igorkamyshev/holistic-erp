@@ -5,7 +5,8 @@
     "start:back:dev": "NODE_ENV=development nodemon --config ./nodemon.json",
     "start:back:debug": "NODE_ENV=development nodemon --config nodemon-debug.json",
     "prestart:back:prod": "tsc",
-    "start:back:prod": "pm2 start ./pm2.config.js"
+    "start:back:prod": "pm2 start ./pm2.config.js",
+    "evolutions:run": "echo 0"
   },
   "dependencies": {
     "@nestjs/common": "^5.6.2",
