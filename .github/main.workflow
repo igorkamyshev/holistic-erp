@@ -30,6 +30,10 @@ action "Only on master" {
 
 action "Login to Docker" {
   uses = "actions/docker/login@8cdf801b322af5f369e00d85e9cf3a7122f49108"
+  secrets = [
+    "DOCKER_PASSWORD",
+    "DOCKER_USERNAME",
+  ]
   needs = ["Only on master"]
 }
 
@@ -55,4 +59,11 @@ action "Push front image" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
   args = "push igorkamyshev/holistic-erp-front"
   needs = ["Build front image"]
+}
+
+action "Deploy on server" {
+  uses = "maddox/actions/ssh@master"
+  needs = ["Push front image", "Push back image"]
+  args = "cd /root/web/holistic-erp && docker-compose pull && docker-compose down && docker-compose up -d && docker-compose run back yarn evolutions:run && docker image prune -f"
+  secrets = ["HOST", "USER", "PUBLIC_KEY", "PRIVATE_KEY"]
 }
