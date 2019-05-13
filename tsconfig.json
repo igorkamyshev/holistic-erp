@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@back/*": ["./back/src/*"]
+    }
+  },
+  "include": ["back/src/**/*"],
+  "exclude": ["node_modules/**/*", "front/node_modules/**/*"]
+}

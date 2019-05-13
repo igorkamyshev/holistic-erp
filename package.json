@@ -1,0 +1,31 @@
+{
+  "name": "isapp",
+  "private": true,
+  "workspaces": [
+    "front",
+    "back"
+  ],
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf ./dist && cd back && yarn prestart:back:prod && cd ../front && yarn prestart:front:prod",
+    "types": "tsc --noEmit -p back",
+    "s": "yarn soda"
+  },
+  "dependencies": {
+    "tsconfig-paths": "^3.7.0"
+  },
+  "devDependencies": {
+    "@solid-soda/scripts": "^1.8.0",
+    "rimraf": "^2.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn soda lint-staged",
+      "commit-msg": "yarn soda commitlint"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

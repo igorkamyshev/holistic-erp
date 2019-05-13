@@ -1,0 +1,14 @@
+FROM mhart/alpine-node:10 as build
+
+WORKDIR /app
+
+COPY . .
+RUN yarn
+
+WORKDIR /app/front
+RUN yarn prestart:front:prod
+
+FROM nginx
+
+COPY default.conf /etc/nginx/conf.d/
+COPY --from=build /app/front/public /usr/share/nginx/html
