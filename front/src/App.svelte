@@ -1,11 +1,11 @@
 <script>
-	export let name;
+	import { Router, Route } from "svelte-routing";
+	
+  import Home from "./routes/Home.svelte";
+  import App from "./routes/App.svelte";
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
-
-<h1>Hello {name}!</h1>
+<Router>
+  <Route path="app" component={App} />
+  <Route path="/" component={Home} />
+</Router>
