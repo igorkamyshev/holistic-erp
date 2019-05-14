@@ -1,4 +1,4 @@
-import { createApi } from "./createApi";
+import { createApi } from './createApi'
 
 export const register = (email, password, team) => {
   console.log(email, password)
