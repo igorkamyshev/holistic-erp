@@ -1,6 +1,5 @@
 <script>
   import Login from "../components/landing/Login.svelte";
-  import Register from "../components/landing/Register.svelte";
 </script>
 
 <main>
@@ -8,5 +7,4 @@
   <p>Привет, мы просто делаем хорошую ERP</p>
 
   <Login />
-  <Register />
 </main>

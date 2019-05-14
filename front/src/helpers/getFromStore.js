@@ -1,9 +1,7 @@
-export const getFromStore = (store) => {
+export const getFromStore = store => {
   let value
 
-  console.log(store)
-
-  const unsubscribe = store.subscribe((data) => {
+  const unsubscribe = store.subscribe(data => {
     value = data
   })
   unsubscribe()
