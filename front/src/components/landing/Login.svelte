@@ -4,13 +4,8 @@
 
   import { loginByTelegram } from '../../api/loginByTelegram'
 
-  const handler = async ({ id, first_name, last_name, username, photo_url, auth_date, hash }) => {
-    const loggedIn = await loginByTelegram(id, {
-      firstName: first_name,
-      lastName: last_name,
-      username,
-      photoUrl: photo_url,
-    }, { date: auth_date, hash })
+  const handler = async (data) => {
+    const loggedIn = await loginByTelegram(data)
 
     if (loggedIn) {
       navigate("/app");
