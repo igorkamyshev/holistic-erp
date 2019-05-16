@@ -6,9 +6,11 @@
     "start:back:debug": "NODE_ENV=development nodemon --config nodemon-debug.json",
     "prestart:back:prod": "tsc",
     "start:back:prod": "pm2 start ./pm2.config.js",
-    "evolutions:run": "echo 0"
+    "evolutions:run": "echo 0",
+    "types": "tsc --noEmit"
   },
   "dependencies": {
+    "@breadhead/detil-ts": "^1.0.1",
     "@nestjs/common": "^6.2.0",
     "@nestjs/core": "^6.2.0",
     "@nestjs/jwt": "^6.1.0",

@@ -126,6 +126,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@breadhead/detil-ts@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@breadhead/detil-ts/-/detil-ts-1.0.1.tgz#8a7a4a242258ffe66d73f526e62d829ddbd2e870"
+  integrity sha512-7c3TbHj7npQeMO561o+aigkM7HKYZyOaOOQ+qMZbXR3gkfbAhtI7FXczcntbx51QEpOYlNtsJxiuFIKvETbojA==
+
 "@commitlint/cli@7":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.6.0.tgz#4f046342149ca7c5819d6f799509f77ab824e02e"

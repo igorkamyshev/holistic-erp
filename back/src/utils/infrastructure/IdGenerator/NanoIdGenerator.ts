@@ -1,4 +1,4 @@
-import * as nanoid from 'nanoid'
+const nanoid = require('nanoid')
 
 import { IdGenerator } from './IdGenerator'
 

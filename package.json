@@ -9,7 +9,6 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./dist && cd back && yarn prestart:back:prod && cd ../front && yarn prestart:front:prod",
-    "types": "tsc --noEmit -p back",
     "s": "yarn soda"
   },
   "dependencies": {

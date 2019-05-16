@@ -1,9 +1,9 @@
 import { ExecutionContext } from '@nestjs/common'
 
-import { TokenPayloadModel } from '@shared/models/user/TokenPayloadModel'
+import { TokenPayload } from '@back/user/application/TokenPayload'
 
 export const addPayloadToRequest = (
-  payload: TokenPayloadModel,
+  payload: TokenPayload,
   executionContext: ExecutionContext,
 ): void => {
   executionContext.switchToHttp().getRequest().user = payload

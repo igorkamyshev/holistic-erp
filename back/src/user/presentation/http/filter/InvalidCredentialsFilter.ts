@@ -20,8 +20,6 @@ export class InvalidCredentialsFilter implements ExceptionFilter {
     res.status(HTTP_STATUS).json({
       status: HTTP_STATUS,
       message: exception.message,
-      login: exception.login,
-      password: exception.password,
     })
   }
 }
