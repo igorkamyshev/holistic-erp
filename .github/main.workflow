@@ -45,8 +45,11 @@ action "Build back image" {
 
 action "Build front image" {
   uses = "actions/docker/cli@8cdf801b322af5f369e00d85e9cf3a7122f49108"
-  args = "build -t igorkamyshev/holistic-erp-front -f Dockerfile-front ."
+  args = "build --build-arg backUrl=$BACK_URL -t igorkamyshev/holistic-erp-front -f Dockerfile-front ."
   needs = ["Login to Docker"]
+  env = {
+    BACK_URL = "https://api.holistic-erp.ru"
+  }
 }
 
 action "Push back image" {
