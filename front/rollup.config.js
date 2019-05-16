@@ -43,7 +43,7 @@ export default {
     // instead of npm run dev), minify
     production && terser(),
     replace({
-      backUrl: process.env.BACK_URL || 'localhost:3000',
+      backUrl: process.env.BACK_URL || 'https://api.holistic-erp.ru',
     }),
   ],
 }
