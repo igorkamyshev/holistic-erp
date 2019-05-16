@@ -13,7 +13,7 @@ export class User {
   public readonly profile: Profile
 
   public get telegram(): Option<TelegramProfile> {
-    if (!this._telegram.id || this._telegram.username) {
+    if (!this._telegram.id || !this._telegram.username) {
       return Option.of(null)
     }
 
