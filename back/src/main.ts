@@ -1,4 +1,4 @@
-process.env.TZ = 'UTC'
+process.env.TZ = 'Europe/Moscow'
 
 import { NestFactory } from '@nestjs/core'
 
