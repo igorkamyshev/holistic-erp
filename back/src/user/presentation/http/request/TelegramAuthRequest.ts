@@ -13,8 +13,7 @@ export class TelegramAuthRequest {
   @ApiModelProperty({ example: 'igorkamyshev' })
   public readonly username: string
 
-  // ??
-  @ApiModelProperty({ example: 'igorkamyshev' })
+  @ApiModelProperty({ example: 'https://t.me/i/userpic/320/igorkamyshev.jpg' })
   public readonly photo_url: string
 
   @ApiModelProperty({ example: 1557951994 })
