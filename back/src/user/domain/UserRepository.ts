@@ -21,6 +21,17 @@ class UserRepo {
     return Option.of(user)
   }
 
+  public async findByTelegram(id: number): Promise<Option<User>> {
+    const user = await this.userRepo
+      .createQueryBuilder()
+      .where({
+        TelegramId: id,
+      })
+      .getOne()
+
+    return Option.of(user)
+  }
+
   public async get(login: string): Promise<User> {
     const user = await this.find(login)
 

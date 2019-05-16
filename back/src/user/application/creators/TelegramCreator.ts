@@ -13,19 +13,13 @@ export class TelegramCreator {
   ) {}
 
   public async create(payload: TelegramAuthPayload): Promise<User> {
-    const login = this.createLogin(payload.id)
-
-    const existUserOption = await this.userRepo.find(login)
+    const existUserOption = await this.userRepo.findByTelegram(payload.id)
 
     if (existUserOption.nonEmpty()) {
       return this.editExistUser(existUserOption.get(), payload)
     }
 
     return this.createNewUser(payload)
-  }
-
-  private createLogin(id: number): string {
-    return `telegram-${id}`
   }
 
   private createFullName(firstName: string, lastName: string): string {
@@ -69,7 +63,7 @@ export class TelegramCreator {
   }
 
   private async createNewUser(payload: TelegramAuthPayload): Promise<User> {
-    const login = this.createLogin(payload.id)
+    const login = `telegram-${payload.id}`
     const newUser = new User(login)
 
     return this.editExistUser(newUser, payload)
