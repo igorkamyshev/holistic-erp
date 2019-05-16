@@ -2,3 +2,5 @@ node_modules
 dist
 *.css.d.ts
 front/public/bundle.*
+.env
+.secure

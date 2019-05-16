@@ -9,10 +9,7 @@ export class JwtOptionsFactory implements Factory {
 
   public createJwtOptions(): JwtModuleOptions {
     return {
-      secretOrPrivateKey: this.config.getStringOrElse(
-        'APP_SECRET',
-        'NotSoSecret',
-      ),
+      secretOrPrivateKey: this.config.getStringOrThrow('APP_SECRET'),
       signOptions: {
         expiresIn: '365 days',
       },

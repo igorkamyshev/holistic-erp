@@ -5,20 +5,23 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { ConfigModule } from '@back/config/config.module'
 import { DbModule } from '@back/db/db.module'
 import { UtilsModule } from '@back/utils/utils.module'
+import { TelegramModule } from '@back/telegram/telegram.module'
 
 import { AuthController } from './presentation/http/controller/AuthController'
 import { InvalidCredentialsFilter } from './presentation/http/filter/InvalidCredentialsFilter'
 import { JwtGuard } from './presentation/http/security/JwtGuard'
-
 import { User } from './domain/User.entity'
 import { UserRepository } from './domain/UserRepository'
-
 import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory'
+import { Authenticator } from './application/Authenticator'
+import { UserCreator } from './application/UserCreator'
+import { TelegramCreator } from './application/creators/TelegramCreator'
 
 @Module({
   imports: [
     DbModule,
     UtilsModule,
+    TelegramModule,
     TypeOrmModule.forFeature([User]),
     JwtModule.registerAsync({
       imports: [ConfigModule],
@@ -26,7 +29,14 @@ import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory'
     }),
   ],
   controllers: [AuthController],
-  providers: [InvalidCredentialsFilter.provider(), UserRepository, JwtGuard],
+  providers: [
+    InvalidCredentialsFilter.provider(),
+    UserRepository,
+    JwtGuard,
+    Authenticator,
+    UserCreator,
+    TelegramCreator,
+  ],
   exports: [UserRepository, JwtGuard],
 })
 export class UserModule implements NestModule {

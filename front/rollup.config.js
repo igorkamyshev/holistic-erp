@@ -6,6 +6,7 @@ import globals from 'rollup-plugin-node-globals'
 import builtins from 'rollup-plugin-node-builtins'
 import json from 'rollup-plugin-json'
 import { terser } from 'rollup-plugin-terser'
+import replace from 'rollup-plugin-replace'
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -28,12 +29,7 @@ export default {
       },
     }),
 
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration —
-    // consult the documentation for details:
-    // https://github.com/rollup/rollup-plugin-commonjs
-    resolve({ jsnext: true, preferBuiltins: true, browser: true }),
+    resolve({ preferBuiltins: true, browser: true }),
     commonjs(),
     globals(),
     builtins(),
@@ -46,5 +42,8 @@ export default {
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),
+    replace({
+      backUrl: process.env.BACK_URL || 'localhost:3000',
+    }),
   ],
 }

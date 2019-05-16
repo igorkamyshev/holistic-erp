@@ -5,6 +5,9 @@ WORKDIR /app
 COPY . .
 RUN yarn
 
+ARG back_url=https://api.holistic-erp.tu
+ENV BACK_URL=$back_url
+
 WORKDIR /app/front
 RUN yarn prestart:front:prod
 

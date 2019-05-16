@@ -1,6 +1,8 @@
 import { ApiModelProperty } from '@nestjs/swagger'
 
-export class TelegramAuthRequest {
+import { TelegramAuthPayload } from '@back/telegram/application/TelegramAuthPayload'
+
+export class TelegramAuthRequest implements TelegramAuthPayload {
   @ApiModelProperty({ example: 65400792 })
   public readonly id: number
 

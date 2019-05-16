@@ -6,7 +6,8 @@
     "start:back:debug": "NODE_ENV=development nodemon --config nodemon-debug.json",
     "prestart:back:prod": "tsc",
     "start:back:prod": "pm2 start ./pm2.config.js",
-    "evolutions:run": "echo 0",
+    "evolutions:init": "evolutions --init",
+    "evolutions:run": "evolutions",
     "types": "tsc --noEmit"
   },
   "dependencies": {
@@ -14,14 +15,19 @@
     "@nestjs/common": "^6.2.0",
     "@nestjs/core": "^6.2.0",
     "@nestjs/jwt": "^6.1.0",
+    "@nestjs/platform-express": "^6.2.0",
     "@nestjs/swagger": "^3.0.2",
     "@nestjs/typeorm": "^6.1.1",
-    "@solid-soda/config": "^1.2.0",
+    "@solid-soda/config": "^1.2.1",
+    "@solid-soda/evolutions": "^0.0.13",
     "cors": "^2.8.5",
     "morgan": "^1.9.1",
     "nanoid": "^2.0.1",
+    "node-telegram-login": "^1.0.0",
+    "pg": "^7.11.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.3.3",
+    "swagger-ui-express": "^4.0.3",
     "typeorm": "^0.2.17"
   },
   "devDependencies": {
