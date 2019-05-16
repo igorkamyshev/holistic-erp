@@ -5,11 +5,8 @@
   import { loginByTelegram } from '../../api/loginByTelegram'
 
   const handler = async (data) => {
-    const loggedIn = await loginByTelegram(data)
-
-    if (loggedIn) {
-      navigate("/app");
-    }
+    await loginByTelegram(data)
+    navigate("/app")
   }
 
   onMount(async => {

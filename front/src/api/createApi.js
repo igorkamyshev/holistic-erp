@@ -10,7 +10,7 @@ export const createApi = () => {
 
   // rollup magic!
   return axios.create({
-    baseURL: 'backUrl',
+    baseURL: 'backUrl' + '/api',
     headers: authHeaders,
   })
 }
