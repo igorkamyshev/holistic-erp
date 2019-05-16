@@ -10,12 +10,12 @@
     "noImplicitAny": true,
     "target": "es6",
     "sourceMap": true,
-    "outDir": "../dist/back",
-    "baseUrl": ".",
+    "outDir": "dist",
+    "baseUrl": "src",
     "paths": {
-      "@back/*": ["./src/*"]
+      "@back/*": ["./*"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": ["**/*"],
+  "exclude": ["**/*.spec.ts"]
 }
