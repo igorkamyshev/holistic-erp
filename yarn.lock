@@ -445,14 +445,14 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@solid-soda/config@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@solid-soda/config/-/config-1.2.1.tgz#7f056a8576a9240cae19437399be34edd256d3d0"
-  integrity sha512-w71APvzB4W9c2K4YYwWNucfPDYFDXuUglCKKWB8/GrhGf6xnr1zORdu0HKN5nSPRG2u5DEr54vx63MDkpzJowA==
+"@solid-soda/config@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@solid-soda/config/-/config-2.0.0.tgz#e3343ca51345e437946585c8ac99c2f044abd578"
+  integrity sha512-jJ3Q7iyNGrbekZm+h4Bx39S4jPRfCALEOKsm/dSZpFMI0jf0nxCOsFd6/kcGZDVonpo/68Rz9TEe19cx+ephUw==
   dependencies:
     change-case "^3.1.0"
     dotenv "^6.2.0"
-    tsoption "^0.7.0"
+    nanoption "^1.0.1"
 
 "@solid-soda/evolutions@^0.0.13":
   version "0.0.13"
@@ -5545,6 +5545,11 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+nanoption@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/nanoption/-/nanoption-1.0.1.tgz#b83147b9a1810c1e9e31170ac71993fb8c6bcc73"
+  integrity sha512-KfUnW+FZa6R5fGO11AT+yRtdXsp2Ta7l23gD1TevgYVRHzRS2fWX9dwPwk9gPFGE4FfCn4N5kUm6SmDAUywEng==
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -8265,11 +8270,6 @@ tslint@5:
     semver "^5.3.0"
     tslib "^1.8.0"
     tsutils "^2.29.0"
-
-tsoption@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/tsoption/-/tsoption-0.7.0.tgz#54634ff56d1bd09d8886fd5bd0d1a5373789440a"
-  integrity sha512-0FaCR76q5OAb/73Yvl7GOM4IldI+fN4n0w7oKW7JHsuYMRfvhCj29kfKK11YzYywwIXCRtb2UwBrz1wVKzdmrQ==
 
 tsutils@^2.29.0:
   version "2.29.0"

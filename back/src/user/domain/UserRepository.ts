@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { Option } from 'tsoption'
+import { Option } from 'nanoption'
 import { Repository } from 'typeorm'
 
 import { User } from './User.entity'

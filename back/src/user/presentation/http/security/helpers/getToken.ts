@@ -1,5 +1,5 @@
 import { ExecutionContext } from '@nestjs/common'
-import { Option } from 'tsoption'
+import { Option } from 'nanoption'
 
 export const getToken = (executionContext: ExecutionContext) => {
   return Option.of(executionContext)

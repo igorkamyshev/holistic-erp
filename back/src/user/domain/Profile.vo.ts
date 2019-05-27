@@ -1,4 +1,4 @@
-import { Option } from 'tsoption'
+import { Option } from 'nanoption'
 import { Column } from 'typeorm'
 
 export class Profile {

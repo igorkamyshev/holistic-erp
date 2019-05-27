@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm'
-import { Option } from 'tsoption'
+import { Option } from 'nanoption'
 
 import { Profile } from './Profile.vo'
 import { TelegramProfile } from './TelegramProfile.vo'
