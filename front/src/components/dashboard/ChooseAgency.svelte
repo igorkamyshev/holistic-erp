@@ -18,8 +18,8 @@
 <style>
   article {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   h2 {
