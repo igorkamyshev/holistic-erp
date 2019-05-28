@@ -11,7 +11,7 @@
 
     if (telegram) {
       const handlerKey = "__handler__telegram";
-      window[handlerKey] = data => dispatch("login", data);
+      window[handlerKey] = data => dispatch("user/login", data);
 
       const script = document.createElement("script");
       script.src = "https://telegram.org/js/telegram-widget.js?5";

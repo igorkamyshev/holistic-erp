@@ -1,9 +1,14 @@
 import axios from 'axios'
 
-export const createApi = () => {
-  const { token } = {}
+export const createApi = token => {
+  let realToken = token
+  if (token && typeof token === 'object') {
+    realToken = token.user.token
+  }
 
-  const authHeaders = !!token ? { Authorization: `Bearer ${token}` } : {}
+  const authHeaders = !!realToken
+    ? { Authorization: `Bearer ${realToken}` }
+    : {}
 
   // rollup magic!
   return axios.create({
