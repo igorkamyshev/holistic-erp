@@ -6,6 +6,8 @@ import { EntitySaver } from '@back/db/EntitySaver'
 import { AgencyRepository } from '../domain/AgencyRepository'
 import { Agency } from '../domain/Agency.entity'
 import { TokenManager } from './TokenManager'
+import { AgencyAlreadyExistException } from './expection/AgencyAlreadyExistException'
+import { AgencyTokenInvalidException } from './expection/AgencyTokenInvalidException'
 
 @Injectable()
 export class StaffManager {
@@ -29,8 +31,7 @@ export class StaffManager {
     )
 
     if (existAgency.nonEmpty()) {
-      // TODO: add real exception
-      throw new Error('Already exist')
+      throw new AgencyAlreadyExistException(agencyName)
     }
 
     const newAgency = new Agency(agencyName, encryptedToken)
@@ -54,8 +55,7 @@ export class StaffManager {
     const validToken = await this.tokenManager.validate(token, agency.token)
 
     if (!validToken) {
-      // TODO: add real exception
-      throw new Error('Invalid token')
+      throw new AgencyTokenInvalidException(token, agencyName)
     }
 
     agency.addWorker(user)

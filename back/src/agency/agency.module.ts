@@ -10,6 +10,8 @@ import { Agency } from './domain/Agency.entity'
 import { AgencyRepository } from './domain/AgencyRepository'
 import { UtilsModule } from '@back/utils/utils.module'
 import { TokenManager } from './application/TokenManager'
+import { AgencyAlreadyExistFilter } from './presentation/http/filter/AgencyAlreadyExistFilter'
+import { AgencyTokenInvalidFilter } from './presentation/http/filter/AgencyTokenInvalidFilter'
 
 @Module({
   imports: [
@@ -19,7 +21,13 @@ import { TokenManager } from './application/TokenManager'
     TypeOrmModule.forFeature([Agency]),
   ],
   controllers: [StartController],
-  providers: [StaffManager, TokenManager, AgencyRepository],
+  providers: [
+    StaffManager,
+    TokenManager,
+    AgencyRepository,
+    AgencyAlreadyExistFilter.provider(),
+    AgencyTokenInvalidFilter.provider(),
+  ],
 })
 export class AgencyModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {

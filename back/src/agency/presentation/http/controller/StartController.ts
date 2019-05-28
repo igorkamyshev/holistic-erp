@@ -19,9 +19,9 @@ import { CreateAgencyRequest } from '../request/CreateAgencyRequest'
 import { JoinAgencyRequest } from '../request/JoinAgencyRequest'
 import { AgencyCreatedResponse } from '../reponse/AgencyCreatedResponse'
 
-@Controller('agency/start')
-@ApiUseTags('agency')
+@Controller('agency')
 @OnlyForUsers()
+@ApiUseTags('agency')
 @ApiBearerAuth()
 export class StartController {
   public constructor(private readonly staffManager: StaffManager) {}
