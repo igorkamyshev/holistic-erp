@@ -5,6 +5,7 @@ import { Repository } from 'typeorm'
 
 import { User } from './User.entity'
 import { EntityNotFoundException } from '@back/utils/domain/EntityNotFoundException'
+import { makeGetFromFind } from '@back/utils/domain/makeGetFromFind'
 
 @Injectable()
 class UserRepo {
@@ -32,15 +33,7 @@ class UserRepo {
     return Option.of(user)
   }
 
-  public async get(login: string): Promise<User> {
-    const user = await this.find(login)
-
-    if (user.nonEmpty()) {
-      return user.get()
-    }
-
-    throw new EntityNotFoundException(User.name, { login })
-  }
+  public get = makeGetFromFind(User.name, this)
 }
 
 export const UserRepository = UserRepo

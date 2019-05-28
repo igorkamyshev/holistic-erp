@@ -37,7 +37,7 @@ import { TelegramCreator } from './application/creators/TelegramCreator'
     UserCreator,
     TelegramCreator,
   ],
-  exports: [UserRepository, JwtGuard],
+  exports: [UserRepository, JwtGuard, Authenticator],
 })
 export class UserModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
