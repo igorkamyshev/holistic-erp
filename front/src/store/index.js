@@ -1,6 +1,14 @@
 import { createSvelteStore } from '@storeon/svelte'
 import persistState from '@storeon/localstorage'
 
-import { user } from './user'
+import devtools from 'storeon/devtools'
 
-export const connect = createSvelteStore([user, persistState(['user'])])
+import { user } from './user'
+import { common } from './common'
+
+export const connect = createSvelteStore([
+  user,
+  common,
+  persistState(['user']),
+  process.env.NODE_ENV !== 'production' && devtools,
+])
