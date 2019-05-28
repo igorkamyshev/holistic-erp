@@ -1,18 +1,18 @@
 <script>
-  import { Router, Link, Route } from "svelte-routing";
-  import { onMount } from "svelte";
+  import { Router, Link, Route } from 'svelte-routing'
+  import { onMount } from 'svelte'
 
-  import { connect } from "../store";
+  import { connect } from '../store'
   import Loader from '../components/common/Loader.svelte'
 
   import Dashboard from './Dashboard.svelte'
 
-  const [dispatch, user] = connect("user");
-  const [_, common] = connect("common");
+  const [dispatch, user] = connect('user')
+  const [_, common] = connect('common')
 
   onMount(() => {
-    dispatch("user/fetch-info");
-  });
+    dispatch('user/fetch-info')
+  })
 </script>
 
 {#if $common.loaded}

@@ -4,7 +4,8 @@
   const [dispatch] = connect()
 
   const joinData = {
-    name: '', token: '',
+    name: '',
+    token: '',
   }
   const createData = {
     name: '',
@@ -13,6 +14,18 @@
   const handleJoin = () => dispatch('user/join-agency', joinData)
   const handleCreate = () => dispatch('user/create-agency', createData)
 </script>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  h2 {
+    grid-column: span 2;
+  }
+</style>
 
 <article>
   <h2>Вы не состоите в агенстве</h2>
@@ -40,15 +53,3 @@
     <button>Создать</button>
   </form>
 </article>
-
-<style>
-  article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-  }
-
-  h2 {
-    grid-column: span 2;
-  }
-</style>

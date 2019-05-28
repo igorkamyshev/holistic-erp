@@ -1,8 +1,8 @@
 <script>
-	import { Router, Route } from "svelte-routing";
-	
-  import Home from "./routes/Home.svelte";
-  import App from "./routes/App.svelte";
+  import { Router, Route } from 'svelte-routing'
+
+  import Home from './routes/Home.svelte'
+  import App from './routes/App.svelte'
 </script>
 
 <Router>
