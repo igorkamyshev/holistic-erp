@@ -15,6 +15,10 @@ import { TokenPayload } from '@back/user/application/TokenPayload'
 import { OnlyForUsers } from '@back/user/presentation/http/security/OnlyForUsers'
 import { StaffManager } from '@back/agency/application/StaffManager'
 
+import { CreateAgencyRequest } from '../request/CreateAgencyRequest'
+import { JoinAgencyRequest } from '../request/JoinAgencyRequest'
+import { AgencyCreatedResponse } from '../reponse/AgencyCreatedResponse'
+
 @Controller('agency/start')
 @ApiUseTags('agency')
 @OnlyForUsers()
@@ -31,7 +35,7 @@ export class StartController {
   @ApiForbiddenResponse({ description: 'Invalid token' })
   public async join(
     @CurrentUser() user: TokenPayload,
-    @Body() request: any, // TODO: add real request type
+    @Body() request: JoinAgencyRequest,
   ): Promise<void> {
     await this.staffManager.joinToExistAgency(
       user.login,
@@ -46,14 +50,15 @@ export class StartController {
   @ApiBadRequestResponse({ description: 'Name already taken' })
   public async create(
     @CurrentUser() user: TokenPayload,
-    @Body() request: any, // TODO: add real request type
-  ): Promise<void> {
+    @Body() request: CreateAgencyRequest,
+  ): Promise<AgencyCreatedResponse> {
     const token = await this.staffManager.createNewAgency(
       user.login,
       request.name,
     )
 
-    // TODO: add real reponse with token
-    console.log(token)
+    return {
+      token,
+    }
   }
 }
