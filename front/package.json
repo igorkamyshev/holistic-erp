@@ -5,8 +5,7 @@
     "autobuild": "rollup -c -w",
     "dev": "sirv public --dev -s",
     "start:front:dev": "run-p autobuild dev",
-    "prestart:front:prod": "rollup -c",
-    "size": "yarn prestart:front:prod && size-limit"
+    "prestart:front:prod": "rollup -c"
   },
   "dependencies": {
     "@storeon/localstorage": "^0.4.0",
@@ -27,17 +26,6 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.4.2",
-    "size-limit": "^1.3.5",
     "svelte": "^3.2.2"
-  },
-  "size-limit": [
-    {
-      "webpack": false,
-      "limit": "100 KB",
-      "path": [
-        "public/bundle.js",
-        "public/bundle.css"
-      ]
-    }
-  ]
+  }
 }
