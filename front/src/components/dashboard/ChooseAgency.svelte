@@ -1,30 +1,31 @@
 <script>
-  let nameForJoin = "";
-  let tokenForJoin = "";
+  import { connect } from '../../store'
 
-  const handleJoin = () => {
-    console.log(nameForJoin, tokenForJoin);
-  };
+  const [dispatch] = connect()
 
-  let nameForCreate = "";
+  const joinData = {
+    name: '', token: '',
+  }
+  const createData = {
+    name: '',
+  }
 
-  const handleCreate = () => {
-    console.log(nameForCreate)
-  };
+  const handleJoin = () => dispatch('user/join-agency', joinData)
+  const handleCreate = () => dispatch('user/create-agency', createData)
 </script>
 
 <article>
-  <p>Вы не присоеделись к агенству</p>
+  <h2>Вы не состоите в агенстве</h2>
 
   <form on:submit|preventDefault={handleJoin}>
     <label>
       Название
-      <input bind:value={nameForJoin} />
+      <input bind:value={joinData.name} />
     </label>
 
     <label>
       Токен
-      <input bind:value={tokenForJoin} />
+      <input bind:value={joinData.token} />
     </label>
 
     <button>Присоедениться</button>
@@ -33,9 +34,21 @@
   <form on:submit|preventDefault={handleCreate}>
     <label>
       Название
-      <input bind:value={nameForCreate} />
+      <input bind:value={createData.name} />
     </label>
 
     <button>Создать</button>
   </form>
 </article>
+
+<style>
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  h2 {
+    grid-column: span 2;
+  }
+</style>

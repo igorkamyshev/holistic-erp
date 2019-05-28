@@ -49,4 +49,21 @@ export const user = store => {
       }
     }
   })
+
+  store.on('user/create-agency', async (state, data) => {
+    const api = createApi(state)
+
+    const response = await api.post('/agency/create', data)
+    const { token } = response.data
+
+    console.log(token)
+  })
+
+  store.on('user/join-agency', async (state, data) => {
+    const api = createApi(state)
+
+    const response = await api.post('/agency/join', data)
+
+    console.log(response)
+  })
 }
