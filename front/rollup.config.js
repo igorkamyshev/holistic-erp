@@ -44,6 +44,7 @@ export default {
     production && terser(),
     replace({
       backUrl: process.env.BACK_URL || 'https://api.holistic-erp.ru',
+      telegramBot: process.env.TELEGRAM_BOT || 'holistic_erp_bot',
     }),
   ],
 }

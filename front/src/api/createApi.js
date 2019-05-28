@@ -1,10 +1,7 @@
 import axios from 'axios'
 
-import { getFromStore } from '../helpers/getFromStore'
-import { user } from '../stores/user'
-
 export const createApi = () => {
-  const { token } = getFromStore(user)
+  const { token } = {}
 
   const authHeaders = !!token ? { Authorization: `Bearer ${token}` } : {}
 
