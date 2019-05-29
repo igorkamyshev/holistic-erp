@@ -473,10 +473,10 @@
     md5 "^2.2.1"
     path "^0.12.7"
 
-"@solid-soda/scripts@^1.11.1":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@solid-soda/scripts/-/scripts-1.11.1.tgz#f7561bed219ee4be44dc0730525ed70fc360276f"
-  integrity sha512-XEx1i3q9MvUt6NTaSQ/sIRw7S/cftAo0b3Gj80ZMl1omsOvfM8C5BrBKBGYrJG8a5P1+wv/YStmAplI6l/QZRw==
+"@solid-soda/scripts@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@solid-soda/scripts/-/scripts-1.11.2.tgz#5b3da9ef1973cc3be9ef772232e8091dafd17f36"
+  integrity sha512-SrZwGFSBEH49j34B+SWN+3Ljlxkn3i1Lst2hv++u7MVn6b9aSf7W6I08SoUnZtO4fCouHWkcc6t3c/QMjmj9Cg==
   dependencies:
     "@commitlint/cli" "7"
     "@commitlint/config-conventional" "7"

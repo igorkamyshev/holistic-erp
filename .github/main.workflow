@@ -18,7 +18,7 @@ action "Static analysis" {
 }
 
 action "Size control" {
-  uses = "borales/actions-yarn@master"
+  uses = "igorkamyshev/actions-yarn@master"
   needs = ["Install dependency"]
   args = "size"
 }
