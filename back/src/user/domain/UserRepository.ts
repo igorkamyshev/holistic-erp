@@ -48,6 +48,16 @@ class UserRepo {
     return flatMap(result, Object.values)
   }
 
+  public async getNamesByAgency(agency: string): Promise<string[]> {
+    const result = await this.connection
+      .createQueryBuilder(Agency, 'agency')
+      .leftJoinAndSelect('agency._staff', 'staff')
+      .where('agency.name = :agency', { agency })
+      .getOne()
+
+    return result.staff.map(user => user.profile.name.getOrElse(user.login))
+  }
+
   public get = makeGetFromFind(User.name, this)
 }
 

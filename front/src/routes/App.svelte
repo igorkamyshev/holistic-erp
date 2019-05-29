@@ -6,6 +6,7 @@
   import Loader from '../components/common/Loader.svelte'
 
   import Dashboard from './Dashboard.svelte'
+  import Team from './Team.svelte'
 
   const [dispatch, common] = connect('common')
 
@@ -30,7 +31,7 @@
       <p>Client</p>
     </Route>
     <Route path="team">
-      <p>Team</p>
+      <Team />
     </Route>
   </Router>
 {:else}

@@ -51,7 +51,7 @@ export const user = store => {
     const api = createApi(state)
 
     try {
-      const response = await api.get('user/info')
+      const response = await api.get('user/info/main')
       const { agencies } = response.data
 
       store.dispatch('user/set-agencies', agencies)
