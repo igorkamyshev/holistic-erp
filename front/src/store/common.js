@@ -6,16 +6,16 @@ export const common = store => {
     },
   }))
 
-  store.on('common/loaded', ({ common }) => ({
+  store.on('common/loaded', state => ({
     common: {
-      ...common,
+      ...state.common,
       loaded: true,
     },
   }))
 
-  store.on('common/forbid', ({ common }) => ({
+  store.on('common/forbid', state => ({
     common: {
-      ...common,
+      ...state.common,
       forbidden: true,
     },
   }))

@@ -473,10 +473,10 @@
     md5 "^2.2.1"
     path "^0.12.7"
 
-"@solid-soda/scripts@^1.10.1":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@solid-soda/scripts/-/scripts-1.10.1.tgz#02b6953faea6abdcd8b3d13200f902db378424f6"
-  integrity sha512-+qB/U4ypplb6QmbyvTWoRpwS2f5JO3xEG1eBFk558PFRoqOeHyl4ZmXY1FHt695sdQSEsuwQduICbMRxb16BOA==
+"@solid-soda/scripts@^1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@solid-soda/scripts/-/scripts-1.11.1.tgz#f7561bed219ee4be44dc0730525ed70fc360276f"
+  integrity sha512-XEx1i3q9MvUt6NTaSQ/sIRw7S/cftAo0b3Gj80ZMl1omsOvfM8C5BrBKBGYrJG8a5P1+wv/YStmAplI6l/QZRw==
   dependencies:
     "@commitlint/cli" "7"
     "@commitlint/config-conventional" "7"
@@ -496,6 +496,8 @@
     fs-extra "^7.0.1"
     husky "1"
     lint-staged "8"
+    lodash "^4.17.11"
+    nanomerge "^0.2.0"
     prettier "1"
     standard-version "5"
     stylelint "^10.0.1"
@@ -3435,6 +3437,11 @@ eslint-plugin-react@7:
     object.fromentries "^2.0.0"
     prop-types "^15.7.2"
     resolve "^1.10.1"
+
+eslint-plugin-svelte3@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-svelte3/-/eslint-plugin-svelte3-1.2.3.tgz#d6ffaaaac55c77d2d59e8a06e168e66990ddc072"
+  integrity sha512-2FhqmE5HwPsbpsPalM6Ej9VdXML5vHYUoSvS1dvJ9tZr8wDATuOnebP5DIHt3U0EHGUYwIjJGBn2JG2gXgb9Wg==
 
 eslint-scope@3.7.1:
   version "3.7.1"
@@ -6635,6 +6642,11 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
   integrity sha512-TghvYc72wlMGMVMluVo9WRJc0mB8KxxF/gZ4YYFy7V2ZQX9l7rgbPg7vjS9mt6U5HXODVFVI2bOduCzwOMv/lw==
 
+nanoclone@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.1.5.tgz#2c80c672a85471ec46ba588f40cac6b5ff9de41e"
+  integrity sha1-LIDGcqhUcexGuliPQMrGtf+d5B4=
+
 nanoid@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.0.1.tgz#deb55cac196e3f138071911dabbc3726eb048864"
@@ -6656,6 +6668,13 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+nanomerge@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nanomerge/-/nanomerge-0.2.0.tgz#ad29c5b24c7111095b4d8113fe8b22a3d75f34af"
+  integrity sha512-b929MpaA7PBFWggbjaqJUWbmFZlhqdgy7d1n3HvS9QRnkdifwsBijQ6Ap/ajaE1V7nc8w1VIS8DI2fOGbIxB3w==
+  dependencies:
+    nanoclone "^0.1.5"
 
 nanoption@^1.0.1:
   version "1.0.1"

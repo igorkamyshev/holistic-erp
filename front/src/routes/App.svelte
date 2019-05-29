@@ -7,8 +7,7 @@
 
   import Dashboard from './Dashboard.svelte'
 
-  const [dispatch, user] = connect('user')
-  const [_, common] = connect('common')
+  const [dispatch, common] = connect('common')
 
   onMount(() => {
     dispatch('user/fetch-info')

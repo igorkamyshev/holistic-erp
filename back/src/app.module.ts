@@ -10,5 +10,7 @@ import { AgencyModule } from './agency/agency.module'
   imports: [ConfigModule, UserModule, DbModule, TelegramModule, AgencyModule],
 })
 export class AppModule implements NestModule {
-  public configure(consumer: MiddlewareConsumer) {}
+  public configure(consumer: MiddlewareConsumer) {
+    // pass
+  }
 }

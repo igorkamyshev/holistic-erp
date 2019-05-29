@@ -8,16 +8,16 @@ export const user = store => {
     },
   }))
 
-  store.on('user/set-token', ({ user }, token) => ({
+  store.on('user/set-token', (state, token) => ({
     user: {
-      ...user,
+      ...state.user,
       token,
     },
   }))
 
-  store.on('user/set-agencies', ({ user }, agencies) => ({
+  store.on('user/set-agencies', (state, agencies) => ({
     user: {
-      ...user,
+      ...state.user,
       agencies,
     },
   }))

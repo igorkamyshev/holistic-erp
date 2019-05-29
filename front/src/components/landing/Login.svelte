@@ -1,12 +1,12 @@
 <script>
-  import { navigate, Link } from 'svelte-routing'
+  import { Link } from 'svelte-routing'
   import { onMount } from 'svelte'
 
   import { connect } from '../../store'
 
   const [dispatch, user] = connect('user')
 
-  onMount(async => {
+  onMount(() => {
     const telegram = document.getElementById('telegram-widget-conatiner')
 
     if (telegram) {

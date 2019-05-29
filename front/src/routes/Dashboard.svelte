@@ -2,7 +2,7 @@
   import { connect } from '../store'
   import ChooseAgency from '../components/dashboard/ChooseAgency.svelte'
 
-  const [_, user] = connect('user')
+  const [, user] = connect('user')
 </script>
 
 <p>Dashboard</p>
