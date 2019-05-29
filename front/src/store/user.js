@@ -5,6 +5,8 @@ export const user = store => {
     user: {
       token: null,
       agencies: [],
+      lastAgencyToken: null,
+      error: null,
     },
   }))
 
@@ -19,6 +21,20 @@ export const user = store => {
     user: {
       ...state.user,
       agencies,
+    },
+  }))
+
+  store.on('user/set-last-agency-token', (state, lastAgencyToken) => ({
+    user: {
+      ...state.user,
+      lastAgencyToken,
+    },
+  }))
+
+  store.on('user/error', (state, error) => ({
+    user: {
+      ...state.user,
+      error,
     },
   }))
 
@@ -45,7 +61,7 @@ export const user = store => {
         store.dispatch('common/forbid')
         store.dispatch('user/set-token', null)
       } else {
-        throw e
+        store.dispatch('user/error', e)
       }
     }
   })
@@ -53,17 +69,25 @@ export const user = store => {
   store.on('user/create-agency', async (state, data) => {
     const api = createApi(state)
 
-    const response = await api.post('/agency/create', data)
-    const { token } = response.data
+    try {
+      const response = await api.post('/agency/create', data)
+      const { token } = response.data
 
-    console.log(token)
+      store.dispatch('user/set-last-agency-token', { token, name: data.name })
+      store.dispatch('user/fetch-info')
+    } catch (e) {
+      store.dispatch('user/error', e)
+    }
   })
 
   store.on('user/join-agency', async (state, data) => {
     const api = createApi(state)
 
-    const response = await api.post('/agency/join', data)
-
-    console.log(response)
+    try {
+      await api.post('/agency/join', data)
+      store.dispatch('user/fetch-info')
+    } catch (e) {
+      store.dispatch('user/error', e)
+    }
   })
 }
