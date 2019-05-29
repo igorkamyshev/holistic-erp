@@ -1,12 +1,14 @@
 import axios from 'axios'
 
-import { getFromStore } from '../helpers/getFromStore'
-import { user } from '../stores/user'
+export const createApi = token => {
+  let realToken = token
+  if (token && typeof token === 'object') {
+    realToken = token.user.token
+  }
 
-export const createApi = () => {
-  const { token } = getFromStore(user)
-
-  const authHeaders = !!token ? { Authorization: `Bearer ${token}` } : {}
+  const authHeaders = !!realToken
+    ? { Authorization: `Bearer ${realToken}` }
+    : {}
 
   // rollup magic!
   return axios.create({

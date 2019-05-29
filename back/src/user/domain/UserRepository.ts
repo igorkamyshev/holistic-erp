@@ -1,16 +1,21 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
+import { InjectRepository, InjectConnection } from '@nestjs/typeorm'
 import { Option } from 'nanoption'
-import { Repository } from 'typeorm'
+import { Repository, Connection } from 'typeorm'
+import { flatMap } from 'lodash'
+
+import { makeGetFromFind } from '@back/utils/domain/makeGetFromFind'
 
 import { User } from './User.entity'
-import { EntityNotFoundException } from '@back/utils/domain/EntityNotFoundException'
+import { Agency } from '@back/agency/domain/Agency.entity'
 
 @Injectable()
 class UserRepo {
   public constructor(
     @InjectRepository(User)
     private readonly userRepo: Repository<User>,
+    @InjectConnection()
+    private readonly connection: Connection,
   ) {}
 
   public async find(login: string): Promise<Option<User>> {
@@ -32,15 +37,18 @@ class UserRepo {
     return Option.of(user)
   }
 
-  public async get(login: string): Promise<User> {
-    const user = await this.find(login)
+  public async getAgencyNames(login: string): Promise<string[]> {
+    const result = await this.connection
+      .createQueryBuilder(Agency, 'agency')
+      .leftJoinAndSelect('agency._staff', 'staff')
+      .where('staff.login = :login', { login })
+      .select('agency.name')
+      .getRawMany()
 
-    if (user.nonEmpty()) {
-      return user.get()
-    }
-
-    throw new EntityNotFoundException(User.name, { login })
+    return flatMap(result, Object.values)
   }
+
+  public get = makeGetFromFind(User.name, this)
 }
 
 export const UserRepository = UserRepo

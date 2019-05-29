@@ -1,4 +1,9 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common'
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  forwardRef,
+} from '@nestjs/common'
 import { JwtModule } from '@nestjs/jwt'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
@@ -16,6 +21,7 @@ import { JwtOptionsFactory } from './infrastructure/JwtOptionsFactory'
 import { Authenticator } from './application/Authenticator'
 import { UserCreator } from './application/UserCreator'
 import { TelegramCreator } from './application/creators/TelegramCreator'
+import { InfoController } from './presentation/http/controller/InfoController'
 
 @Module({
   imports: [
@@ -28,7 +34,7 @@ import { TelegramCreator } from './application/creators/TelegramCreator'
       useClass: JwtOptionsFactory,
     }),
   ],
-  controllers: [AuthController],
+  controllers: [AuthController, InfoController],
   providers: [
     InvalidCredentialsFilter.provider(),
     UserRepository,
@@ -37,7 +43,7 @@ import { TelegramCreator } from './application/creators/TelegramCreator'
     UserCreator,
     TelegramCreator,
   ],
-  exports: [UserRepository, JwtGuard],
+  exports: [UserRepository, JwtGuard, Authenticator],
 })
 export class UserModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
