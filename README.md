@@ -8,4 +8,4 @@ Calm down and code up.
 
 ## Deployment
 
-Calm down and deploy it.
+Calm down and deploy it with docker.
