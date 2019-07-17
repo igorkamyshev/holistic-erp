@@ -25,7 +25,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn soda lint-staged",
-      "pre-push": "yarn soda lint && yarn types && yarn size",
+      "pre-push": "yarn soda lint && yarn types",
       "commit-msg": "yarn soda commitlint"
     }
   },
@@ -35,7 +35,7 @@
   "size-limit": [
     {
       "webpack": false,
-      "limit": "100 KB",
+      "limit": "700 KB",
       "path": [
         "dist/front/App.*.js"
       ]
