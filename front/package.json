@@ -6,16 +6,27 @@
     "prestart:front:prod": "parcel build index.html -d ../dist/front --cache-dir ../.cache/front"
   },
   "dependencies": {
+    "mobx": "^5.11.0",
+    "mobx-react": "^6.1.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router5": "^7.1.0",
+    "router5": "^7.0.2",
+    "router5-plugin-browser": "^7.0.2"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "mobx-devtools-mst": "^0.9.21",
+    "mobx-state-tree": "^3.14.0",
     "parcel-bundler": "^1.12.3",
     "typed-css-modules": "^0.6.0",
     "typescript-plugin-css-modules": "^1.2.1"
+  },
+  "alias": {
+    "&front": "./src",
+    "&shared": "../shared"
   }
 }

@@ -7725,7 +7725,7 @@ longest@^1.0.1:
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
   integrity sha1-MKCy2jj3N3DoKUoNIuZiXtd9AJc=
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -8182,6 +8182,33 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mobx-devtools-mst@^0.9.21:
+  version "0.9.21"
+  resolved "https://registry.yarnpkg.com/mobx-devtools-mst/-/mobx-devtools-mst-0.9.21.tgz#430c52131d82b7ef24281baaae64e552908afa91"
+  integrity sha512-eyGtucp9zXunzRjYZjXsaQ18/riOy8bdW2a14YIQ96ZPhLXXnR0zivIUyJ35ZC3o5Nd+kpUzqrm/8jCf8zjLyQ==
+
+mobx-react-lite@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.4.0.tgz#193beb5fdddf17ae61542f65ff951d84db402351"
+  integrity sha512-5xCuus+QITQpzKOjAOIQ/YxNhOl/En+PlNJF+5QU4Qxn9gnNMJBbweAdEW3HnuVQbfqDYEUnkGs5hmkIIStehg==
+
+mobx-react@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-6.1.1.tgz#24a2c8a3393890fa732b4efd34cc6dcccf6e0e7a"
+  integrity sha512-hjACWCTpxZf9Sv1YgWF/r6HS6Nsly1SYF22qBJeUE3j+FMfoptgjf8Zmcx2d6uzA07Cezwap5Cobq9QYa0MKUw==
+  dependencies:
+    mobx-react-lite "1.4.0"
+
+mobx-state-tree@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/mobx-state-tree/-/mobx-state-tree-3.14.0.tgz#8611051b93a71439db161b8ec855870cfd7e678d"
+  integrity sha512-obQ+LPCff4LqX86ghQpYIVAtCmps7ewCxIds/EmSxBULj9+7Qs2v4YEbvUeWymp/Sj3dPcvDjIMMdIRz6sUE5Q==
+
+mobx@^5.11.0:
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.11.0.tgz#58c64769bc2408ccde35fc2bac4cd5b8ae7b28a6"
+  integrity sha512-WMZCgjuW9vo2MhumrhJa0byTGdlZQcTKzLW9LoqMdmqVqWnG74HOSXWJ0YpxBngsc/rAUMwvdy+CVnw+/a4yeg==
 
 modify-values@^1.0.0:
   version "1.0.1"
@@ -9163,6 +9190,13 @@ path-parse@^1.0.6:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
+path-parser@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/path-parser/-/path-parser-4.2.0.tgz#2fbb3df2d49659a9a4cac88be7d8d5f4666814fb"
+  integrity sha512-MPPZiWTTp2I72VXmGQQfsn2ohrbd9QTbZSLYNS+HXsnQ37VbiLR/szO2R7DHaZA1V1scYxuxgyQerj+6kMTXtA==
+  dependencies:
+    search-params "2.1.3"
+
 path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
@@ -10001,6 +10035,14 @@ prop-types@^15.6.2, prop-types@^15.7.2:
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
+prop-types@~15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+  integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
+  dependencies:
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 property-expr@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/property-expr/-/property-expr-1.5.1.tgz#22e8706894a0c8e28d58735804f6ba3a3673314f"
@@ -10337,6 +10379,14 @@ react-is@^16.8.1:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+
+react-router5@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/react-router5/-/react-router5-7.1.0.tgz#e626505d3f4f0b766078d9a64d129e71055b01cd"
+  integrity sha512-OVMaRPOhJP5/1U2ExEz9kpv/cdnpt08bKo/+bUgsimDTJ+eD0NrM4wqa1nkpZFUJaICfHccjuHfcxcA5/N0cDw==
+  dependencies:
+    prop-types "~15.6.2"
+    router5-transition-path "^7.0.1"
 
 react@16.8.6, react@^16.8.6:
   version "16.8.6"
@@ -10907,6 +10957,33 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+route-node@3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/route-node/-/route-node-3.4.2.tgz#6481fd5949c34a785bfbb9c3bcdae4d8333bbd46"
+  integrity sha512-MDIllr+xwmzSKQh49Ls1g66LIH9JisXh15WXyu4hAYW95mrTSRWr7bqc23hcrjZpehTmSNOb64ZiHBgsHUArog==
+  dependencies:
+    path-parser "4.2.0"
+    search-params "2.1.3"
+
+router5-plugin-browser@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/router5-plugin-browser/-/router5-plugin-browser-7.0.2.tgz#a13376a1d72fd696b0d5da5a697e7aeb39f5fd24"
+  integrity sha512-iDrHIDVj6wyvJBKo6fTTkrQor8/vKOXOJQD30HnFcWMHP0Amiu3vzEi6HwM3HjTr5L1AKVzMINBI3fonsdINkw==
+
+router5-transition-path@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/router5-transition-path/-/router5-transition-path-7.0.1.tgz#2e941fa2021fb1e4b301ec44a5c999635f787180"
+  integrity sha512-ZAiz78ey4T1CDjgFiOUK4fX6AF5ZC8tuw4jCpfsfHWFt5r6URtx/2Sc1ENFPkA6Yrl2crUCGxVWUZCBFwtH9GA==
+
+router5@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/router5/-/router5-7.0.2.tgz#10b6ba554bfefe3233ead8b74c07f66c72b70590"
+  integrity sha512-QPTKHjJVn8pozHoPvVREGTogo06M/1dY6UHMMUyoAc7gG3UMx5QBMjyiREnqtac0U0Cp4T5RsZ0bkBXNsSjfYg==
+  dependencies:
+    route-node "3.4.2"
+    router5-transition-path "^7.0.1"
+    symbol-observable "1.2.0"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -10999,6 +11076,11 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
+
+search-params@2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/search-params/-/search-params-2.1.3.tgz#90b98964eaf3d0edef0f73e6e8307d1480020413"
+  integrity sha512-hHxU9ZGWpZ/lrFBIHndSnQae2in7ra+m+tBSoeAahSWDDgOgpZqs4bfaTZpljgNgAgTbjiQoJtZW6FKSsfEcDA==
 
 semver-compare@^1.0.0:
   version "1.0.0"
@@ -11912,7 +11994,7 @@ swap-case@^1.1.0:
     lower-case "^1.1.1"
     upper-case "^1.1.1"
 
-symbol-observable@^1.1.0:
+symbol-observable@1.2.0, symbol-observable@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==

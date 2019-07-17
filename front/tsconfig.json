@@ -18,6 +18,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "plugins": [
       {
         "name": "typescript-plugin-css-modules",
@@ -27,7 +29,7 @@
       }
     ],
     "paths": {
-      "&front/*": ["src/*"],
+      "&front/*": ["./src/*"],
       "&shared/*": ["./../shared/*"]
     }
   },
