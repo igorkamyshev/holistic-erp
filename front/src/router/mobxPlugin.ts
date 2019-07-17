@@ -1,4 +1,4 @@
-import { Router, PluginFactory, State, NavigationOptions } from 'router5'
+import { Router, PluginFactory, State } from 'router5'
 
 import { RouterStore } from './RouterStore'
 
