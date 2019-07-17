@@ -11,4 +11,4 @@ RUN yarn prestart:front:prod
 FROM nginx
 
 COPY default.conf /etc/nginx/conf.d/
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/front /usr/share/nginx/html
