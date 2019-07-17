@@ -1,6 +1,6 @@
-import { IdGenerator } from '@back/utils/infrastructure/IdGenerator/IdGenerator'
+import { IdGenerator } from '&back/utils/infrastructure/IdGenerator/IdGenerator'
 import { Injectable } from '@nestjs/common'
-import { PasswordEncoder } from '@back/utils/infrastructure/PasswordEncoder/PasswordEncoder'
+import { PasswordEncoder } from '&back/utils/infrastructure/PasswordEncoder/PasswordEncoder'
 
 @Injectable()
 export class TokenManager {

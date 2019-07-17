@@ -9,11 +9,11 @@ import {
   ApiForbiddenResponse,
 } from '@nestjs/swagger'
 
-import { PostNoCreate } from '@back/utils/presentation/http/PostNoCreate'
-import { CurrentUser } from '@back/user/presentation/http/decorator/CurrentUser'
-import { TokenPayload } from '@back/user/application/TokenPayload'
-import { OnlyForUsers } from '@back/user/presentation/http/security/OnlyForUsers'
-import { StaffManager } from '@back/agency/application/StaffManager'
+import { PostNoCreate } from '&back/utils/presentation/http/PostNoCreate'
+import { CurrentUser } from '&back/user/presentation/http/decorator/CurrentUser'
+import { TokenPayload } from '&back/user/application/TokenPayload'
+import { OnlyForUsers } from '&back/user/presentation/http/security/OnlyForUsers'
+import { StaffManager } from '&back/agency/application/StaffManager'
 
 import { CreateAgencyRequest } from '../request/CreateAgencyRequest'
 import { JoinAgencyRequest } from '../request/JoinAgencyRequest'

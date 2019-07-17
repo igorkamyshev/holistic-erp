@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
-import { UserRepository } from '@back/user/domain/UserRepository'
-import { EntitySaver } from '@back/db/EntitySaver'
+import { UserRepository } from '&back/user/domain/UserRepository'
+import { EntitySaver } from '&back/db/EntitySaver'
 
 import { AgencyRepository } from '../domain/AgencyRepository'
 import { Agency } from '../domain/Agency.entity'

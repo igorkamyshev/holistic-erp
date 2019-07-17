@@ -7,15 +7,15 @@
     "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
     "target": "es6",
     "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": "src",
+    "outDir": "../dist/back",
+    "baseUrl": ".",
     "paths": {
-      "@back/*": ["./*"]
+      "&back/*": ["./src/*"],
+      "&shared/*": ["./../shared/*"]
     }
   },
-  "include": ["**/*"],
-  "exclude": ["**/*.spec.ts"]
+  "include": ["src/**/*", "../shared/**/*"],
+  "exclude": ["node_modules"]
 }

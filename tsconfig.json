@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "lib": ["es2017", "dom"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "paths": {
-      "@back/*": ["./back/src/*"]
+      "&back/*": ["./back/src/*"],
+      "&front/*": ["./front/src/*"],
+      "&shared/*": ["./shared/*"]
     }
   },
-  "include": ["back/src/**/*"],
+  "include": ["back/src/**/*", "front/src/**/*", "shared/**/*"],
   "exclude": ["node_modules/**/*", "front/node_modules/**/*"]
 }

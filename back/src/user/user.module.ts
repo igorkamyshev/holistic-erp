@@ -7,10 +7,10 @@ import {
 import { JwtModule } from '@nestjs/jwt'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { ConfigModule } from '@back/config/config.module'
-import { DbModule } from '@back/db/db.module'
-import { UtilsModule } from '@back/utils/utils.module'
-import { TelegramModule } from '@back/telegram/telegram.module'
+import { ConfigModule } from '&back/config/config.module'
+import { DbModule } from '&back/db/db.module'
+import { UtilsModule } from '&back/utils/utils.module'
+import { TelegramModule } from '&back/telegram/telegram.module'
 
 import { AuthController } from './presentation/http/controller/AuthController'
 import { InvalidCredentialsFilter } from './presentation/http/filter/InvalidCredentialsFilter'

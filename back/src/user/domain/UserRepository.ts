@@ -4,10 +4,10 @@ import { Option } from 'nanoption'
 import { Repository, Connection } from 'typeorm'
 import { flatMap } from 'lodash'
 
-import { makeGetFromFind } from '@back/utils/domain/makeGetFromFind'
+import { makeGetFromFind } from '&back/utils/domain/makeGetFromFind'
 
 import { User } from './User.entity'
-import { Agency } from '@back/agency/domain/Agency.entity'
+import { Agency } from '&back/agency/domain/Agency.entity'
 
 @Injectable()
 class UserRepo {

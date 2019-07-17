@@ -4,7 +4,7 @@ import { readFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { TlsOptions } from 'tls'
 
-import { Configuration } from '@back/config/Configuration'
+import { Configuration } from '&back/config/Configuration'
 
 export class DbOptionsFactory implements TypeOrmOptionsFactory {
   public constructor(

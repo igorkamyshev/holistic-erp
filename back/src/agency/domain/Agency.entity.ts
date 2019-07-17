@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryColumn, ManyToMany, JoinTable } from 'typeorm'
 
-import { User } from '@back/user/domain/User.entity'
+import { User } from '&back/user/domain/User.entity'
 
 @Entity()
 export class Agency {

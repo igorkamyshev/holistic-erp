@@ -7,8 +7,8 @@ import {
   ApiBearerAuth,
 } from '@nestjs/swagger'
 
-import { UserRepository } from '@back/user/domain/UserRepository'
-import { TokenPayload } from '@back/user/application/TokenPayload'
+import { UserRepository } from '&back/user/domain/UserRepository'
+import { TokenPayload } from '&back/user/application/TokenPayload'
 
 import { InfoReponse } from '../response/InfoReponse'
 import { OnlyForUsers } from '../security/OnlyForUsers'

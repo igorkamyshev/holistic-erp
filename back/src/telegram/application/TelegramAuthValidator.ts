@@ -1,6 +1,6 @@
 const TelegramLogin = require('node-telegram-login')
 
-import { Configuration } from '@back/config/Configuration'
+import { Configuration } from '&back/config/Configuration'
 
 import { TelegramAuthPayload } from './TelegramAuthPayload'
 import { Injectable } from '@nestjs/common'

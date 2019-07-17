@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { TelegramAuthPayload } from '@back/telegram/application/TelegramAuthPayload'
+import { TelegramAuthPayload } from '&back/telegram/application/TelegramAuthPayload'
 
 import { User } from '../domain/User.entity'
 import { TelegramCreator } from './creators/TelegramCreator'

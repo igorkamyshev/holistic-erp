@@ -1,7 +1,7 @@
 import { ArgumentsHost, Catch, ExceptionFilter } from '@nestjs/common'
 import { APP_FILTER } from '@nestjs/core'
 
-import { AgencyAlreadyExistException } from '@back/agency/application/expection/AgencyAlreadyExistException'
+import { AgencyAlreadyExistException } from '&back/agency/application/expection/AgencyAlreadyExistException'
 
 const HTTP_STATUS = 400
 

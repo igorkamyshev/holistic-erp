@@ -4,7 +4,7 @@ import { Option } from 'nanoption'
 import { Repository } from 'typeorm'
 
 import { Agency } from './Agency.entity'
-import { makeGetFromFind } from '@back/utils/domain/makeGetFromFind'
+import { makeGetFromFind } from '&back/utils/domain/makeGetFromFind'
 
 @Injectable()
 class AgecnyRepo {
