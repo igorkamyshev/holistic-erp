@@ -3,12 +3,13 @@
   "private": true,
   "workspaces": [
     "front",
-    "back"
+    "back",
+    "landing"
   ],
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./dist && cd back && yarn prestart:back:prod && cd ../front && yarn prestart:front:prod && cd ..",
+    "build": "rimraf ./dist && cd back && yarn prestart:back:prod && cd ../front && yarn prestart:front:prod && cd ../landing && yarn prestart:landing:prod",
     "s": "yarn soda",
     "size": "rimraf dist && cd front && yarn prestart:front:prod && size-limit",
     "types": "tcm front && tsc --noEmit -p front && tsc --noEmit -p back"

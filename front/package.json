@@ -2,9 +2,8 @@
   "name": "front",
   "version": "1.0.0",
   "scripts": {
-    "autobuild": "rollup -c -w",
-    "start:front:dev": "parcel index.html -d ../dist/front --cache-dir ../.cache",
-    "prestart:front:prod": "parcel build index.html -d ../dist/front --cache-dir ../.cache"
+    "start:front:dev": "parcel index.html -d ../dist/front --cache-dir ../.cache/front",
+    "prestart:front:prod": "parcel build index.html -d ../dist/front --cache-dir ../.cache/front"
   },
   "dependencies": {
     "react": "^16.8.6",
