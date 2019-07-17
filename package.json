@@ -10,7 +10,7 @@
   "scripts": {
     "build": "rimraf ./dist && cd back && yarn prestart:back:prod && cd ../front && yarn prestart:front:prod && cd ..",
     "s": "yarn soda",
-    "size": "size-limit",
+    "size": "rimraf dist && cd front && yarn prestart:front:prod && size-limit",
     "types": "tcm front && tsc --noEmit -p front && tsc --noEmit -p back"
   },
   "dependencies": {
@@ -33,9 +33,10 @@
   },
   "size-limit": [
     {
+      "webpack": false,
       "limit": "100 KB",
       "path": [
-        "front/index.html"
+        "dist/front/App.*.js"
       ]
     }
   ]

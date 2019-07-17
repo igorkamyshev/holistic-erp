@@ -2,7 +2,6 @@ workflow "Check PR" {
   on = "pull_request"
   resolves = [
     "Static analysis",
-    "Size control",
   ]
 }
 
@@ -15,12 +14,6 @@ action "Static analysis" {
   uses = "borales/actions-yarn@master"
   needs = ["Install dependency"]
   args = "s lint"
-}
-
-action "Size control" {
-  uses = "igorkamyshev/actions-yarn@master"
-  needs = ["Install dependency"]
-  args = "size"
 }
 
 workflow "Deploy" {

@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "scripts": {
     "autobuild": "rollup -c -w",
-    "start:front:dev": "parcel index.html -d ../dist/front",
-    "prestart:front:prod": "parcel build index.html -d ../dist/front"
+    "start:front:dev": "parcel index.html -d ../dist/front --cache-dir ../.cache",
+    "prestart:front:prod": "parcel build index.html -d ../dist/front --cache-dir ../.cache"
   },
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "parcel-bundler": "^1.12.3",
