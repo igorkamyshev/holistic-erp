@@ -1,9 +1,8 @@
+import { Injectable } from '@nestjs/common'
 const TelegramLogin = require('node-telegram-login')
 
 import { Configuration } from '&back/config/Configuration'
-
-import { TelegramAuthPayload } from './TelegramAuthPayload'
-import { Injectable } from '@nestjs/common'
+import { TelegramAuthPayload } from '&shared/model/TelegramAuthPayload'
 
 @Injectable()
 export class TelegramAuthValidator {

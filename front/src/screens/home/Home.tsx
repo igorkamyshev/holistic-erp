@@ -1,13 +1,16 @@
 import React from 'react'
 
-import { Link } from '&front/router/Link'
-import { RouteName } from '&front/router/RouteName'
+import { LoginPassword } from './providers/login-password'
+import { Telegram } from './providers/telegram'
 
 export const Home = () => {
   return (
-    <div>
-      <p>Home page</p>
-      <Link routeName={RouteName.Hello}>GO</Link>
-    </div>
+    <>
+      <h1>Home page</h1>
+
+      <LoginPassword />
+
+      <Telegram />
+    </>
   )
 }
