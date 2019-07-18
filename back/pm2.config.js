@@ -3,7 +3,7 @@ module.exports = {
     {
       node_args: '--require ./tsconfig-paths-bootstrap.js',
       name: 'isapp-core',
-      script: '../dist/back/src/main.js',
+      script: '../dist/back/back/src/main.js',
       watch: false,
       instances: 'max',
       exec_mode: 'cluster',
