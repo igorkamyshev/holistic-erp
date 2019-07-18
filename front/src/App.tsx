@@ -5,13 +5,12 @@ import { RouterProvider } from 'react-router5'
 
 import { initRouter } from './router/initRouter'
 import { Switch } from './router/Switch'
-import { routerStore } from './store/routerStore'
-import { userStore } from './store/userStore'
+import { store } from './store'
 
 const router = initRouter()
 
 const Root = () => (
-  <StoreProvider routerStore={routerStore} userStore={userStore}>
+  <StoreProvider rootStore={store}>
     <RouterProvider router={router}>
       <Switch />
     </RouterProvider>
@@ -21,8 +20,8 @@ const Root = () => (
 if (process.env.NODE_ENV !== 'production') {
   const makeInspectable = require('mobx-devtools-mst').default
 
-  makeInspectable(routerStore)
-  makeInspectable(userStore)
+  makeInspectable(store)
+  makeInspectable(store)
 }
 
 router.start(() => {

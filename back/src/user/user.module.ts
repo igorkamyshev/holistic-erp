@@ -1,9 +1,4 @@
-import {
-  MiddlewareConsumer,
-  Module,
-  NestModule,
-  forwardRef,
-} from '@nestjs/common'
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common'
 import { JwtModule } from '@nestjs/jwt'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
@@ -22,6 +17,7 @@ import { Authenticator } from './application/Authenticator'
 import { UserCreator } from './application/UserCreator'
 import { TelegramCreator } from './application/creators/TelegramCreator'
 import { InfoController } from './presentation/http/controller/InfoController'
+import { InternalCreator } from './application/creators/InternalCreator'
 
 @Module({
   imports: [
@@ -42,6 +38,7 @@ import { InfoController } from './presentation/http/controller/InfoController'
     Authenticator,
     UserCreator,
     TelegramCreator,
+    InternalCreator,
   ],
   exports: [UserRepository, JwtGuard, Authenticator],
 })

@@ -6,22 +6,51 @@ import {
   ApiUseTags,
 } from '@nestjs/swagger'
 
+import { InvalidCredentialsException } from '&back/user/application/exception/InvalidCredentialsException'
 import { PostNoCreate } from '&back/utils/presentation/http/PostNoCreate'
 import { TelegramAuthValidator } from '&back/telegram/application/TelegramAuthValidator'
+import { PasswordEncoder } from '&back/utils/infrastructure/PasswordEncoder/PasswordEncoder'
 import { Authenticator } from '&back/user/application/Authenticator'
 import { UserCreator } from '&back/user/application/UserCreator'
 
 import { TelegramAuthRequest } from '../request/TelegramAuthRequest'
 import { TokenResponse } from '../response/TokenResponse'
+import { LoginPasswordRequest } from '../request/LoginPasswordRequest'
 
 @Controller('user/auth')
 @ApiUseTags('user')
 export class AuthController {
   public constructor(
     private readonly telegramAuthValidator: TelegramAuthValidator,
+    private readonly passwordEncoder: PasswordEncoder,
     private readonly authenticator: Authenticator,
     private readonly userCreator: UserCreator,
   ) {}
+
+  @PostNoCreate('login')
+  @ApiOperation({ title: 'Auth by Login and Password' })
+  @ApiOkResponse({ description: 'Ok', type: TokenResponse })
+  @ApiBadRequestResponse({ description: 'Invalid password' })
+  public async loginByPassword(
+    @Body() request: LoginPasswordRequest,
+  ): Promise<TokenResponse> {
+    const user = await this.userCreator.fromLogin(request)
+
+    const valid = await user.credentials.validatePassword(
+      request.password,
+      this.passwordEncoder,
+    )
+
+    if (!valid) {
+      throw new InvalidCredentialsException()
+    }
+
+    const token = this.authenticator.getToken(user)
+
+    return {
+      token,
+    }
+  }
 
   @PostNoCreate('telegram')
   @ApiOperation({ title: 'Auth by Telegram' })
@@ -33,12 +62,12 @@ export class AuthController {
     const valid = this.telegramAuthValidator.validate(request)
 
     if (!valid) {
-      throw new Error('LOL?')
+      throw new InvalidCredentialsException()
     }
 
     const user = await this.userCreator.fromTelegram(request)
 
-    const token = await this.authenticator.getToken(user.login)
+    const token = this.authenticator.getToken(user)
 
     return {
       token,

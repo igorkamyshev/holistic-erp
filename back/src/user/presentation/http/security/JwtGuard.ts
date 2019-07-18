@@ -13,7 +13,7 @@ export class JwtGuard implements CanActivate {
     const token = getToken(context)
 
     try {
-      const payload = await this.authenticator.decode(token)
+      const payload = this.authenticator.decode(token)
 
       addPayloadToRequest(payload, context)
 

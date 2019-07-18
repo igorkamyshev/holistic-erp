@@ -18,8 +18,8 @@ export class RouterStore {
 
   navigate = (
     name: RouteName,
-    params: Record<string, string | number | boolean>,
-    opts: NavigationOptions,
+    params: Record<string, string | number | boolean> = {},
+    opts: NavigationOptions = {},
   ) => {
     if (!this.router) {
       return

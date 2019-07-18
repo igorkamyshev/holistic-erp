@@ -3,6 +3,7 @@ import { Option } from 'nanoption'
 
 import { Profile } from './Profile.vo'
 import { TelegramProfile } from './TelegramProfile.vo'
+import { Credentials } from './Credentials.vo'
 
 @Entity()
 export class User {
@@ -23,11 +24,15 @@ export class User {
   @Column(type => TelegramProfile)
   private _telegram: TelegramProfile
 
+  @Column(type => Credentials)
+  public readonly credentials: Credentials
+
   constructor(login: string) {
     this.login = login
 
     this.profile = new Profile()
     this._telegram = new TelegramProfile()
+    this.credentials = new Credentials()
   }
 
   public addTelegram(id: number, username: string = null) {
