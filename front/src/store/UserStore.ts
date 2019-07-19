@@ -1,10 +1,9 @@
-import { observable, action, runInAction, computed } from 'mobx'
+import { observable, action, runInAction } from 'mobx'
 
 import { LoginPasswordCredentials } from '&shared/model/LoginPasswordCredentials'
 import { TelegramAuthPayload } from '&shared/model/TelegramAuthPayload'
 import { RouteName } from '&front/router/RouteName'
 import { UserInfo } from '&shared/model/UserInfo'
-import { ApiClient } from '&front/api/ApiClient'
 import { Token } from '&shared/model/Token'
 
 import { ApplicationStore } from './ApplicationStore'
@@ -22,14 +21,9 @@ export class UserStore {
     this.token = localStorage.getItem(TOKEN_LOCALSTORAGE_KEY)
   }
 
-  @computed
-  get api() {
-    return new ApiClient(this.token)
-  }
-
   @action
   async telegramSignIn(telegramPayload: TelegramAuthPayload) {
-    const token = await this.api.post<Token>('/user/auth/telegram')(
+    const token = await this.store.api.post<Token>('/user/auth/telegram')(
       telegramPayload,
     )
 
@@ -40,7 +34,9 @@ export class UserStore {
 
   @action
   async internalSignIn(credentials: LoginPasswordCredentials) {
-    const token = await this.api.post<Token>('/user/auth/login')(credentials)
+    const token = await this.store.api.post<Token>('/user/auth/login')(
+      credentials,
+    )
 
     this.saveToken(token)
 
@@ -50,7 +46,9 @@ export class UserStore {
   @action
   async fetchUserInfo() {
     if (this.agencies === null) {
-      const { agencies } = await this.api.get<UserInfo>('/user/info/main')()
+      const { agencies } = await this.store.api.get<UserInfo>(
+        '/user/info/main',
+      )()
 
       runInAction(() => {
         this.agencies = agencies
