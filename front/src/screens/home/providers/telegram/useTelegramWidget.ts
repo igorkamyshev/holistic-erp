@@ -19,6 +19,9 @@ export const useTelegramWidget = (
       script.setAttribute('data-telegram-login', telegramBotName)
       script.setAttribute('data-size', 'large')
       script.setAttribute('data-onauth', `window.${handlerKey}(user)`)
+      script.setAttribute('data-userpic', 'false')
+      script.setAttribute('data-radius', '2')
+      script.setAttribute('data-request-access', 'write')
       script.async = true
       ref.current.appendChild(script)
     }
