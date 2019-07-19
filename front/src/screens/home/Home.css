@@ -1,28 +1,30 @@
 .container {
   position: relative;
-  top: 10vh;
+  top: 20vh;
   display: grid;
 
   grid-template-areas:
     'header header'
     'main   aside';
-  grid-template-rows: 1fr 1fr;
 
+  grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
+  gap: 48px;
 
   max-width: 40vw;
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
+    top: 10vh;
     grid-template-areas:
       'header'
       'main'
       'aside';
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
 
     grid-template-columns: 1fr;
-    max-width: 90vw;
+    max-width: 75vw;
   }
 }
 
@@ -35,5 +37,7 @@
 }
 
 .aside {
+  display: flex;
+  flex-direction: column;
   grid-area: aside;
 }

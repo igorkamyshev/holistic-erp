@@ -1,10 +1,15 @@
 import React, { useCallback } from 'react'
 import { Form, Field } from 'react-final-form'
+import cx from 'classnames'
 
 import { LoginPasswordCredentials } from '&shared/model/LoginPasswordCredentials'
+import { StylingProps } from '&front/utils/StylingProps'
 import { store } from '&front/store'
 
-export const LoginPassword = () => {
+import s from './LoginPassword.css'
+import { Label } from '&front/ui/label'
+
+export const LoginPassword = ({ className }: StylingProps) => {
   const onSubmit = useCallback(async (fields: LoginPasswordCredentials) => {
     await store.userStore.internalSignIn(fields)
   }, [])
@@ -12,16 +17,14 @@ export const LoginPassword = () => {
   return (
     <Form onSubmit={onSubmit}>
       {({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email
+        <form onSubmit={handleSubmit} className={cx(className, s.container)}>
+          <Label text="Email">
             <Field name="login" component="input" type="email" />
-          </label>
+          </Label>
 
-          <label>
-            Пароль
+          <Label text="Пароль">
             <Field name="password" component="input" type="password" />
-          </label>
+          </Label>
 
           <button>Войти</button>
         </form>
