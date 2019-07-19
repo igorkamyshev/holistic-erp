@@ -17,5 +17,3 @@ RUN yarn prestart:back:prod
 EXPOSE 3000
 
 ENV NODE_ENV="production"
-
-CMD [ "pm2-docker", "start", "pm2.config.js" ]
