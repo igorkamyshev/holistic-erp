@@ -26,4 +26,15 @@ export class RouterStore {
     }
     this.router.navigate(name, params, opts)
   }
+
+  replace = (
+    name: RouteName,
+    params: Record<string, string | number | boolean> = {},
+    opts: Omit<NavigationOptions, 'replace'> = {},
+  ) => {
+    this.navigate(name, params, {
+      ...opts,
+      replace: true,
+    })
+  }
 }

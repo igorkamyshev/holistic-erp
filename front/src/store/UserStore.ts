@@ -1,4 +1,4 @@
-import { observable, action, runInAction } from 'mobx'
+import { observable, action, runInAction, computed } from 'mobx'
 
 import { LoginPasswordCredentials } from '&shared/model/LoginPasswordCredentials'
 import { TelegramAuthPayload } from '&shared/model/TelegramAuthPayload'
@@ -16,6 +16,20 @@ export class UserStore {
 
   @observable
   agencies: string[] | null = null
+
+  @computed
+  get loggedIn() {
+    if (this.token) {
+      this.checkToken()
+    }
+
+    return !!this.token
+  }
+
+  @computed
+  get primaryAgencyExists() {
+    return this.agencies && this.agencies.length > 0
+  }
 
   constructor(private readonly store: ApplicationStore) {
     this.token = localStorage.getItem(TOKEN_LOCALSTORAGE_KEY)
@@ -54,6 +68,21 @@ export class UserStore {
         this.agencies = agencies
       })
     }
+  }
+
+  @action
+  async checkToken() {
+    const validToken = await this.store.api
+      .get('user/auth/check-token')()
+      .then(() => true, () => false)
+
+    if (!validToken) {
+      localStorage.removeItem(TOKEN_LOCALSTORAGE_KEY)
+
+      this.token = null
+    }
+
+    return !!this.token
   }
 
   @action

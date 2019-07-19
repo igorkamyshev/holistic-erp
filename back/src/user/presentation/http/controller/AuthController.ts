@@ -1,9 +1,10 @@
-import { Body, Controller } from '@nestjs/common'
+import { Body, Controller, Get } from '@nestjs/common'
 import {
   ApiBadRequestResponse,
   ApiOkResponse,
   ApiOperation,
   ApiUseTags,
+  ApiForbiddenResponse,
 } from '@nestjs/swagger'
 
 import { InvalidCredentialsException } from '&back/user/application/exception/InvalidCredentialsException'
@@ -16,6 +17,7 @@ import { UserCreator } from '&back/user/application/UserCreator'
 import { TelegramAuthRequest } from '../request/TelegramAuthRequest'
 import { TokenResponse } from '../response/TokenResponse'
 import { LoginPasswordRequest } from '../request/LoginPasswordRequest'
+import { OnlyForUsers } from '../security/OnlyForUsers'
 
 @Controller('user/auth')
 @ApiUseTags('user')
@@ -72,5 +74,14 @@ export class AuthController {
     return {
       token,
     }
+  }
+
+  @Get('check-token')
+  @OnlyForUsers()
+  @ApiOperation({ title: 'Check token' })
+  @ApiOkResponse({ description: 'Token is valid' })
+  @ApiForbiddenResponse({ description: 'Token is invalid' })
+  public async checkToken() {
+    // pass
   }
 }
