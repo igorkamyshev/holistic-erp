@@ -19,7 +19,7 @@ import { CreateAgencyRequest } from '../request/CreateAgencyRequest'
 import { JoinAgencyRequest } from '../request/JoinAgencyRequest'
 import { AgencyCreatedResponse } from '../reponse/AgencyCreatedResponse'
 
-@Controller('agency')
+@Controller('agency/start')
 @OnlyForUsers()
 @ApiUseTags('agency')
 @ApiBearerAuth()

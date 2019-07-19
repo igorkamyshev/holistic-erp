@@ -1,6 +1,8 @@
 import { ApiModelProperty } from '@nestjs/swagger'
 
-export class CreateAgencyRequest {
+import { CreateAgency } from '&shared/model/CreateAgency'
+
+export class CreateAgencyRequest implements CreateAgency {
   @ApiModelProperty({ example: 'Holistic SMM Agency' })
   public readonly name: string
 }

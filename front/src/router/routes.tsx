@@ -6,7 +6,7 @@ import { Hello } from '&front/screens/hello'
 import { RouteName } from './RouteName'
 
 export const routes = [
-  { name: RouteName.Home, path: '/', component: Home },
+  { name: RouteName.Home, path: '/', component: Home, secure: false },
   { name: RouteName.Hello, path: '/hello', component: Hello, secure: true },
   {
     name: RouteName.App,

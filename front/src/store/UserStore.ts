@@ -59,7 +59,7 @@ export class UserStore {
 
   @action
   async fetchUserInfo() {
-    if (this.agencies === null) {
+    if (this.agencies === null && this.token) {
       const { agencies } = await this.store.api.get<UserInfo>(
         '/user/info/main',
       )()
