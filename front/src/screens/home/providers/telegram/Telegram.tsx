@@ -1,12 +1,11 @@
 import React, { useRef, useCallback } from 'react'
-import { observer } from 'mobx-react'
 
 import { TelegramAuthPayload } from '&shared/model/TelegramAuthPayload'
 import { store } from '&front/store'
 
 import { useTelegramWidget } from './useTelegramWidget'
 
-export const Telegram = observer(() => {
+export const Telegram = () => {
   const { userStore } = store
   const container = useRef<HTMLDivElement>(null)
 
@@ -21,4 +20,4 @@ export const Telegram = observer(() => {
       <div ref={container} />
     </>
   )
-})
+}

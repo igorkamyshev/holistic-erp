@@ -1,17 +1,22 @@
 import { observable, action, runInAction, computed } from 'mobx'
 
-import { ApiClient } from '&front/api/ApiClient'
-import { TelegramAuthPayload } from '&shared/model/TelegramAuthPayload'
-import { Token } from '&shared/model/Token'
-import { ApplicationStore } from './ApplicationStore'
-import { RouteName } from '&front/router/RouteName'
 import { LoginPasswordCredentials } from '&shared/model/LoginPasswordCredentials'
+import { TelegramAuthPayload } from '&shared/model/TelegramAuthPayload'
+import { RouteName } from '&front/router/RouteName'
+import { UserInfo } from '&shared/model/UserInfo'
+import { ApiClient } from '&front/api/ApiClient'
+import { Token } from '&shared/model/Token'
+
+import { ApplicationStore } from './ApplicationStore'
 
 const TOKEN_LOCALSTORAGE_KEY = 'access-token'
 
 export class UserStore {
   @observable
   token: string | null = null
+
+  @observable
+  agencies: string[] | null = null
 
   constructor(private readonly store: ApplicationStore) {
     this.token = localStorage.getItem(TOKEN_LOCALSTORAGE_KEY)
@@ -40,6 +45,17 @@ export class UserStore {
     this.saveToken(token)
 
     this.store.routerStore.navigate(RouteName.Hello)
+  }
+
+  @action
+  async fetchUserInfo() {
+    if (this.agencies === null) {
+      const { agencies } = await this.api.get<UserInfo>('/user/info/main')()
+
+      runInAction(() => {
+        this.agencies = agencies
+      })
+    }
   }
 
   @action
