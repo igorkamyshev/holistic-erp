@@ -29,6 +29,11 @@
     "mobx-devtools-mst": "^0.9.21",
     "mobx-state-tree": "^3.14.0",
     "parcel-bundler": "^1.12.3",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-modules": "^1.4.1",
+    "postcss-nesting": "^7.0.0",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
     "typed-css-modules": "^0.6.0",
     "typescript-plugin-css-modules": "^1.2.1"
   },

@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  top: 10vh;
+  display: grid;
+
+  grid-template-areas:
+    'header header'
+    'main   aside';
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-columns: 1fr 1fr;
+
+  max-width: 40vw;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      'header'
+      'main'
+      'aside';
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-columns: 1fr;
+    max-width: 90vw;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.aside {
+  grid-area: aside;
+}

@@ -33,6 +33,7 @@ export class UserStore {
     this.store.routerStore.navigate(RouteName.Hello)
   }
 
+  @action
   async internalSignIn(credentials: LoginPasswordCredentials) {
     const token = await this.api.post<Token>('/user/auth/login')(credentials)
 

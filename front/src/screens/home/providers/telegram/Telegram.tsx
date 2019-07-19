@@ -19,7 +19,6 @@ export const Telegram = observer(() => {
   return (
     <>
       <div ref={container} />
-      <p>{userStore.token}</p>
     </>
   )
 })
