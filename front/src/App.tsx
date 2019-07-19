@@ -6,6 +6,7 @@ import { RouterProvider } from 'react-router5'
 import { initRouter } from './router/initRouter'
 import { Switch } from './router/Switch'
 import { store } from './store'
+import './ui/config.css'
 
 const router = initRouter()
 
