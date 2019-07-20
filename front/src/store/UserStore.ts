@@ -86,6 +86,11 @@ export class UserStore {
   }
 
   @action
+  resetUserInfo() {
+    this.agencies = null
+  }
+
+  @action
   private saveToken = ({ token }: Token) => {
     localStorage.setItem(TOKEN_LOCALSTORAGE_KEY, token)
 

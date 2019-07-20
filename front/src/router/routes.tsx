@@ -1,7 +1,6 @@
-import React from 'react'
-
 import { Home } from '&front/screens/home'
 import { Hello } from '&front/screens/hello'
+import { Dashboard } from '&front/screens/dashboard'
 
 import { RouteName } from './RouteName'
 
@@ -11,7 +10,7 @@ export const routes = [
   {
     name: RouteName.App,
     path: '/app',
-    component: () => <p>app</p>,
+    component: Dashboard,
     secure: true,
   },
 ]
