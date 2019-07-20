@@ -6,6 +6,7 @@ import { Loader } from '&front/ui/loader'
 import { CreateAgency } from '&front/features/create-agency'
 import { Link } from '&front/router/Link'
 import { RouteName } from '&front/router/RouteName'
+import { JoinAgency } from '&front/features/join-agency'
 
 import s from './Hello.css'
 
@@ -20,7 +21,7 @@ export const Hello = observer(() => {
   return (
     <section className={s.container}>
       <CreateAgency onCreated={onActed} />
-      <p>...</p>
+      <JoinAgency onJoin={onActed} />
       {acted && <Link routeName={RouteName.App}>Перейти к приложению</Link>}
     </section>
   )

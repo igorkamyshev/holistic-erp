@@ -1,4 +1,5 @@
 import { CreateAgency } from '&shared/model/CreateAgency'
+import { JoinAgency } from '&shared/model/JoinAgency'
 import { Token } from '&shared/model/Token'
 
 import { ApplicationStore } from './ApplicationStore'
@@ -12,5 +13,9 @@ export class AgecnyStore {
     )
 
     return token
+  }
+
+  async joinAgency(data: JoinAgency) {
+    await this.store.api.post<void>('/agency/start/join')(data)
   }
 }
