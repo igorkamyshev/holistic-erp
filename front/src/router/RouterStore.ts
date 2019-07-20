@@ -1,5 +1,6 @@
 import { observable, action } from 'mobx'
 import { Router, State, NavigationOptions } from 'router5'
+import { Omit } from 'utility-types'
 
 import { RouteName } from './RouteName'
 
