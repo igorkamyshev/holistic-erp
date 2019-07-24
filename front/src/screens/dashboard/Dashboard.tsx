@@ -3,6 +3,8 @@ import { observer } from 'mobx-react'
 
 import { store } from '&front/store'
 
+import { Today } from './today'
+
 export const Dashboard = observer(() => {
   const { userStore } = store
 
@@ -15,6 +17,8 @@ export const Dashboard = observer(() => {
       <h1>Dashboard</h1>
 
       <p>Ваши агенства {userStore.agencies.join(', ')}</p>
+
+      <Today />
     </section>
   )
 })
