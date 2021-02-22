@@ -22,10 +22,6 @@ class AgecnyRepo {
   }
 
   public get = makeGetFromFind(Agency.name, this)
-
-  public async getNamesByLogin(login: string): Promise<string[]> {
-    return []
-  }
 }
 
 export const AgencyRepository = AgecnyRepo
